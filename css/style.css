@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FEE1F7;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: Montserrat, sans-serif;
+    overflow-x: hidden;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 16px;
+    line-height: 22px;
+}
+
+button {
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 16px 32px;
+    color: rgba(255, 255, 255, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.90);
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.20);
+        transform: translateY(-2px);
+    }
+}
+
+.divPadrao {
+    width: min(1400px, 90vw);
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+#divFixa {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image: url('./img/background.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#bannerInicial {
+    background: linear-gradient(to bottom, #FEE1F7, #BC75F7);
+    align-items: center;
+    margin: auto;
+}
+
+.divTextos {
+    width: 60%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.divTextos h1 {
+    font-size: 8vw;
+    font-weight: 800;
+    line-height: 0.95;
+}
+
+.divImgs {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame {
+    pointer-events: none;
+}
+
+#bannerInicial .divImgs img {
+    width: 100%;
+}
+
+#bannerInicial .divTextos {
+    animation: fadeTexto;
+    animation-timeline: view();
+}
+
+#bannerInicial .divImgs img {
+    animation: fadeImagem;
+    animation-timeline: view();
+}
+
+@keyframes fadeTexto {
+    0% {
+        opacity: 0;
+        filter: blur(30px);
+    }
+
+    50% {
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        filter: blur(30px);
+    }
+}
+
+@keyframes fadeImagem {
+    0% {
+        opacity: 0;
+        transform: translateX(300px);
+        filter: blur(30px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(300px);
+        filter: blur(30px);
+    }
+}
+
+#segundaSecao {
+    background: linear-gradient(to top, #FEE1F7, #BC75F7);
+}
+
+#segundaSecao .divTextos {
+    animation: fadeTexto2;
+    animation-timeline: view();
+}
+.frame2 {
+    animation: rotateImagem;
+    animation-timeline: view(40% 10%);
+}
+
+@keyframes fadeTexto2 {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+        filter: blur(10px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-300px);
+        filter: blur(10px);
+    }
+}
+@keyframes rotateImagem {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+#terceiraSecao {
+    background: linear-gradient(to bottom, #FEE1F7, #c994f5);
+    display: flex;
+}
+
+.divTerceiraSecao {
+    width: 100vw;
+    min-height: 200vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#terceiraSecao h3 {
+    font-size: 12vw;
+    margin-bottom: 60px;
+
+    animation: textosAnimados;
+    animation-timeline: view();
+
+    span {
+        font-size: 2vw;
+        opacity: 0.5;
+    }
+}
+@keyframes textosAnimados {
+    0% {
+        opacity: 0;
+        transform: translateX(300px);
+        filter: blur(30px);
+    }
+
+    45%, 65% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-300px);
+        filter: blur(30px);
+    }
+}
